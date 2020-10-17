@@ -1,0 +1,33 @@
+{
+  "name": "custom-activity",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/start",
+    "test": "mocha --recursive",
+    "dev": "nodemon ./bin/start"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fuel-rest": "^3.2.2",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0",
+    "uuid": "^8.3.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4"
+  }
+}

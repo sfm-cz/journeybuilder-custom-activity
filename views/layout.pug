@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/styles/salesforce-lightning-design-system.min.css')
+    link(rel='stylesheet', href='/styles/custom.css')
+    script(src="javascript/libs/require.js")
+    script(src="javascript/libs/jquery.min.js")
+
+    script.
+      (function () {
+        var config = {
+          baseUrl: 'javascript',
+          paths: {
+            validate: 'libs/jquery.validate.min'
+          },
+        };
+        var dependencies = ['customActivity'];
+        require(config, dependencies);
+      })();
+  body
+    block content
