@@ -8,7 +8,7 @@ const fs = require('fs');
  * @param res
  */
 exports.config = (req, res) => {
-  const domain = process.env.DOMAIN || 'localhost:3000';
+  const domain = req.headers.host || req.headers.origin;
   const file = path.join(__dirname, '..', 'public', 'config-template.json');
 
   const configTemplate = fs.readFileSync(file, 'utf-8');
