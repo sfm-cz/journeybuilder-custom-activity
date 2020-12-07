@@ -1,6 +1,7 @@
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const helmet = require('helmet');
 const httpErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
@@ -9,6 +10,16 @@ const routes = require('./routes/index');
 const activityRouter = require('./routes/activity');
 
 const app = express();
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ["'self'"],
+        'frame-ancestors': ["'self'", `https://mc.${process.env.STACK}.exacttarget.com`, `https://jbinteractions.${process.env.STACK}.marketingcloudapps.com`],
+      },
+    },
+  }),
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

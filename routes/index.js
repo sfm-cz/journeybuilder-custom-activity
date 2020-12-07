@@ -11,8 +11,9 @@ exports.config = (req, res) => {
   const domain = process.env.DOMAIN || 'localhost:3000';
   const file = path.join(__dirname, '..', 'public', 'config-template.json');
 
-  const content = fs.readFileSync(file, 'utf-8');
-  res.send(content.replace(/\$DOMAIN/g, domain));
+  const configTemplate = fs.readFileSync(file, 'utf-8');
+  const config = JSON.parse(configTemplate.replace(/\$DOMAIN/g, domain));
+  res.json(config);
 };
 
 /**
