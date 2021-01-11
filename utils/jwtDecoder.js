@@ -1,4 +1,3 @@
-require('dotenv').config();
 const JWT = require('jsonwebtoken');
 
 module.exports = (body) => {

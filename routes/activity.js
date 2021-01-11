@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { v1: Uuidv1 } = require('uuid');
 const JWT = require('../utils/jwtDecoder');
 const SFClient = require('../utils/sfmc-client');

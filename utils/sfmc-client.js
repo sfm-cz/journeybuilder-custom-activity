@@ -1,4 +1,3 @@
-require('dotenv').config();
 const FuelRest = require('fuel-rest');
 
 const options = {
